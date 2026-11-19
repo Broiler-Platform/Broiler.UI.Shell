@@ -29,18 +29,9 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: Broiler.UI.Shell
     steps:
-      - name: Check out Broiler.UI.Shell
+      - name: Check out
         uses: actions/checkout@v7
-        with:
-          path: Broiler.UI.Shell
-
-      - name: Check out sibling Broiler.UI (Core)
-        uses: actions/checkout@v7
-        with:
-          repository: Broiler-Platform/Broiler.UI
-          path: Broiler.UI
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v6
@@ -79,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: test-reports
-          path: Broiler.UI.Shell/test-results/
+          path: test-results/
           if-no-files-found: warn
 
       - name: Pack and verify every package
@@ -94,5 +85,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: nuget-packages
-          path: Broiler.UI.Shell/artifacts/*
+          path: artifacts/*
           if-no-files-found: error

@@ -21,22 +21,11 @@ jobs:
   version:
     name: Resolve preview version
     runs-on: ubuntu-24.04
-    defaults:
-      run:
-        shell: bash
-        working-directory: Broiler.UI.Shell
     outputs:
       version: ${{ steps.version.outputs.version }}
     steps:
-      - name: Check out Broiler.UI.Shell
+      - name: Check out
         uses: actions/checkout@v7
-        with:
-          path: Broiler.UI.Shell
-      - name: Check out sibling Broiler.UI (Core)
-        uses: actions/checkout@v7
-        with:
-          repository: Broiler-Platform/Broiler.UI
-          path: Broiler.UI
       - name: Set up .NET
         uses: actions/setup-dotnet@v6
         with:
