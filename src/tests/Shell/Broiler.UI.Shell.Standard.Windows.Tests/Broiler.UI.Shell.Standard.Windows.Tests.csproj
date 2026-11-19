@@ -8,8 +8,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Broiler.Graphics.Windows" />
+    <PackageReference Include="Broiler.UI.Window.Standard" />
     <ProjectReference Include="..\..\..\Implementations\Standard\Shell\Broiler.UI.AboutDialog.Standard\Broiler.UI.AboutDialog.Standard.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Broiler.UI\src\Implementations\Standard\Shell\Broiler.UI.Window.Standard\Broiler.UI.Window.Standard.csproj" />
     <Using Include="Xunit" />
   </ItemGroup>
 </Project>

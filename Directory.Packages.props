@@ -39,6 +39,7 @@
     <PackageVersion Include="Broiler.UI.Button.Standard" Version="0.1.0-preview.35" />
     <PackageVersion Include="Broiler.UI.ComboBox.Standard" Version="0.1.0-preview.35" />
     <PackageVersion Include="Broiler.UI.Dialog" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Dialog.Standard" Version="0.1.0-preview.35" />
     <PackageVersion Include="Broiler.UI.Edit.Standard" Version="0.1.0-preview.35" />
     <PackageVersion Include="Broiler.UI.Label.Standard" Version="0.1.0-preview.35" />
     <PackageVersion Include="Broiler.UI.ListView.Standard" Version="0.1.0-preview.35" />
