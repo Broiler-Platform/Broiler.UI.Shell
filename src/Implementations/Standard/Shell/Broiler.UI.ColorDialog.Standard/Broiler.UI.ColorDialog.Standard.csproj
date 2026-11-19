@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>Broiler.UI.ColorDialog.Standard</RootNamespace>
+    <AssemblyName>Broiler.UI.ColorDialog.Standard</AssemblyName>
+    <PackageId>Broiler.UI.ColorDialog.Standard</PackageId>
+    <Description>Simple standard platform-neutral Broiler color dialog implementation.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Broiler.Graphics" />
+    <PackageReference Include="Broiler.UI.Button.Standard" />
+    <PackageReference Include="Broiler.UI.Edit.Standard" />
+    <PackageReference Include="Broiler.UI.Slider.Standard" />
+    <PackageReference Include="Broiler.UI.SpinBox.Standard" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Abstractions\Shell\Broiler.UI.ColorDialog\Broiler.UI.ColorDialog.csproj" />
+  </ItemGroup>
+
+</Project>

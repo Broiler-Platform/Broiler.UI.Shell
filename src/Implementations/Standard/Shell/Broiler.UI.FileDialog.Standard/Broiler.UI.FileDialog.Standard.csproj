@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>Broiler.UI.FileDialog.Standard</RootNamespace>
+    <AssemblyName>Broiler.UI.FileDialog.Standard</AssemblyName>
+    <PackageId>Broiler.UI.FileDialog.Standard</PackageId>
+    <Description>Simple standard platform-neutral Broiler file dialog implementation.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Broiler.Graphics" />
+    <PackageReference Include="Broiler.UI.Button.Standard" />
+    <PackageReference Include="Broiler.UI.ComboBox.Standard" />
+    <PackageReference Include="Broiler.UI.Edit.Standard" />
+    <PackageReference Include="Broiler.UI.ListView.Standard" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Abstractions\Shell\Broiler.UI.FileDialog\Broiler.UI.FileDialog.csproj" />
+  </ItemGroup>
+
+</Project>

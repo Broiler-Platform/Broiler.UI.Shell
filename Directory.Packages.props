@@ -1,0 +1,56 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <!-- Dependency versions are independent of the version being published for UI.
+       The sample hosts pin their platform backends separately from the versions the
+       runtime libraries build against. -->
+  <PropertyGroup>
+    <!-- The runtime libraries' Broiler.Graphics: 0.1.0-preview.13 brings Broiler.Graphics.Paging,
+         which printing and the print preview draw. A property, so a build against a local pack
+         can name one with -p:BroilerGraphicsPackageVersion=... -->
+    <BroilerGraphicsPackageVersion Condition="'$(BroilerGraphicsPackageVersion)' == ''">0.1.0-preview.14</BroilerGraphicsPackageVersion>
+    <BroilerInputPackageVersion>0.1.0-preview.7</BroilerInputPackageVersion>
+    <BroilerDocumentsPackageVersion>0.1.0-preview.28</BroilerDocumentsPackageVersion>
+    <BroilerSampleGraphicsPackageVersion>0.1.0-preview.14</BroilerSampleGraphicsPackageVersion>
+    <BroilerSampleInputPackageVersion>0.1.0-preview.7</BroilerSampleInputPackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Broiler component packages used by the runtime libraries -->
+    <PackageVersion Include="Broiler.Documents.FormatCodes" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.Documents.Model" Version="0.1.0-preview.35" Condition="'$(BroilerDocumentsModelPackageVersion)' == ''" />
+    <PackageVersion Include="Broiler.Documents.Model" Version="$(BroilerDocumentsModelPackageVersion)" Condition="'$(BroilerDocumentsModelPackageVersion)' != ''" />
+    <PackageVersion Include="Broiler.Documents.Rtf" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.Graphics" Version="0.1.0-preview.19" />
+    <PackageVersion Include="Broiler.Input" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Keyboard" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Mouse" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Pen" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Text" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Touch" Version="0.1.0-preview.9" />
+    <!-- Platform backends used only by the sample hosts -->
+    <PackageVersion Include="Broiler.Graphics.Linux.OpenGL" Version="0.1.0-preview.19" />
+    <PackageVersion Include="Broiler.Graphics.Windows" Version="0.1.0-preview.19" />
+    <PackageVersion Include="Broiler.Input.Camera.Windows" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Keyboard.Linux" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Microphone.Windows" Version="0.1.0-preview.9" />
+    <PackageVersion Include="Broiler.Input.Mouse.Linux" Version="0.1.0-preview.9" />
+    <!-- Test dependencies (referenced for every test project by src/tests/Directory.Build.props) -->
+    <PackageVersion Include="Broiler.UI.Button.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.ComboBox.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Dialog" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Edit.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Label.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.ListView.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Panel.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.PrintPreview.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.ProgressBar.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Slider.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.SpinBox.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.ToggleButton.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Broiler.UI.Window.Standard" Version="0.1.0-preview.35" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
+    <PackageVersion Include="xunit.v3" Version="4.0.3" />
+  </ItemGroup>
+</Project>

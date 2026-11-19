@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>Broiler.UI.AboutDialog</RootNamespace>
+    <AssemblyName>Broiler.UI.AboutDialog</AssemblyName>
+    <PackageId>Broiler.UI.AboutDialog</PackageId>
+    <Description>Platform-neutral Broiler about dialog abstraction.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Broiler.Graphics" />
+    <PackageReference Include="Broiler.UI.Dialog" />
+  </ItemGroup>
+</Project>

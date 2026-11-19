@@ -1,0 +1,29 @@
+<Project>
+
+  <PropertyGroup>
+    <BroilerParentBuildProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</BroilerParentBuildProps>
+  </PropertyGroup>
+  <Import Project="$(BroilerParentBuildProps)" Condition="'$(BroilerParentBuildProps)' != ''" />
+
+  <Import Project="$(MSBuildThisFileDirectory)eng\Broiler.Packaging.props" />
+
+  <PropertyGroup Condition="'$(BroilerBaseConfiguration)' == ''">
+    <BroilerBaseConfiguration Condition="'$(Configuration)' == 'Debug-Linux' Or '$(Configuration)' == 'Debug-Windows'">Debug</BroilerBaseConfiguration>
+    <BroilerBaseConfiguration Condition="'$(Configuration)' == 'Release-Linux' Or '$(Configuration)' == 'Release-Windows'">Release</BroilerBaseConfiguration>
+
+    <DebugSymbols Condition="'$(BroilerBaseConfiguration)' == 'Debug'">true</DebugSymbols>
+    <DebugType Condition="'$(BroilerBaseConfiguration)' == 'Debug'">portable</DebugType>
+    <Optimize Condition="'$(BroilerBaseConfiguration)' == 'Debug'">false</Optimize>
+    <DefineConstants Condition="'$(BroilerBaseConfiguration)' == 'Debug'">$(DefineConstants);DEBUG</DefineConstants>
+    <DebugType Condition="'$(BroilerBaseConfiguration)' == 'Release'">portable</DebugType>
+    <Optimize Condition="'$(BroilerBaseConfiguration)' == 'Release'">true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/Broiler-Platform/Broiler.UI.Shell</PackageProjectUrl>
+    <PackageTags>broiler;ui;shell;dialogs</PackageTags>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
+</Project>

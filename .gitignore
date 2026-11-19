@@ -1,0 +1,7 @@
+*.cache
+.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+*.dll
+*.exe
+*.pdb
+*.targets
+*.Up2Date
