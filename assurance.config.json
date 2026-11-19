@@ -1,0 +1,34 @@
+{
+  "$comment": "Per-declaration assurance for Broiler.UI.Shell. Product projects only: the 12 shipping packages under src/Abstractions and src/Implementations. The src/tests suites and src/samples hosts are not listed. HUMAN_REVIEW.md is a hand-written record and stays as it is; the generated per-unit record goes to HUMAN_REVIEW.units.md.",
+  "schema": 1,
+  "component": "Broiler.UI.Shell",
+  "projects": [
+    "src/Abstractions/Shell/Broiler.UI.AboutDialog/Broiler.UI.AboutDialog.csproj",
+    "src/Abstractions/Shell/Broiler.UI.ColorDialog/Broiler.UI.ColorDialog.csproj",
+    "src/Abstractions/Shell/Broiler.UI.FileDialog/Broiler.UI.FileDialog.csproj",
+    "src/Abstractions/Shell/Broiler.UI.FontDialog/Broiler.UI.FontDialog.csproj",
+    "src/Abstractions/Shell/Broiler.UI.PrintDialog/Broiler.UI.PrintDialog.csproj",
+    "src/Abstractions/Shell/Broiler.UI.ScanDialog/Broiler.UI.ScanDialog.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.AboutDialog.Standard/Broiler.UI.AboutDialog.Standard.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.ColorDialog.Standard/Broiler.UI.ColorDialog.Standard.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.FileDialog.Standard/Broiler.UI.FileDialog.Standard.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.FontDialog.Standard/Broiler.UI.FontDialog.Standard.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.PrintDialog.Standard/Broiler.UI.PrintDialog.Standard.csproj",
+    "src/Implementations/Standard/Shell/Broiler.UI.ScanDialog.Standard/Broiler.UI.ScanDialog.Standard.csproj"
+  ],
+  "exclude": [],
+  "exemptionPredicate": "owning-component",
+  "spdx": {
+    "copyright": [ "2026 Broiler Platform contributors" ],
+    "license": "Apache-2.0"
+  },
+  "spdxOverrides": [],
+  "artefacts": {
+    "report": "CODE-ASSURANCE.md",
+    "humanReview": "HUMAN_REVIEW.units.md",
+    "manifest": "assurance.manifest.json"
+  },
+  "forbidDirectives": false,
+  "forgeryVocabulary": "narrow",
+  "regenerateCommand": "dotnet run --project Broiler.Code/src/Broiler.Code.Review.Cli -c Release -- assurance generate --root Broiler.UI.Shell"
+}

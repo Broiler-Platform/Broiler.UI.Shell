@@ -1,7 +1,22 @@
-*.cache
-.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-*.dll
-*.exe
-*.pdb
-*.targets
-*.Up2Date
+# Build output
+[Bb]in/
+[Oo]bj/
+win-x64
+net10.0
+net10.0-windows
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.pubxml
+
+# Test / publish artifacts
+[Pp]ublish/
+artifacts/
+test-results/
+*.binlog
+
+# NuGet pack output (packages are published from CI/local artifacts, never committed)
+*.nupkg
+*.snupkg
