@@ -18,6 +18,7 @@
   <ItemGroup>
     <PackageReference Include="Broiler.Graphics" />
     <PackageReference Include="Broiler.Graphics.Windows" />
+    <PackageReference Include="Broiler.Native.Windows" />
     <PackageReference Include="Broiler.UI.Panel.Standard" />
     <PackageReference Include="Broiler.UI.Window.Standard" />
   </ItemGroup>

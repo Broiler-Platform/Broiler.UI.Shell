@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using Broiler.Native.Windows;
 
 namespace Broiler.UI.Shell.Win32.Demo;
 
@@ -10,7 +11,7 @@ internal static class Program
     [STAThread]
     private static int Main()
     {
-        _ = SetProcessDpiAwarenessContext(new IntPtr(-4));
+        _ = WindowNative.SetProcessDpiAwarenessContext(new IntPtr(-4));
 
         try
         {
@@ -19,18 +20,11 @@ internal static class Program
         }
         catch (Exception ex)
         {
-            MessageBox(IntPtr.Zero, ex.ToString(), "Broiler.UI.Shell Win32 Demo", MbIconError | MbOk);
+            WindowNative.MessageBox(IntPtr.Zero, ex.ToString(), "Broiler.UI.Shell Win32 Demo", MbIconError | MbOk);
             return 1;
         }
     }
 
     private const uint MbOk = 0x00000000;
     private const uint MbIconError = 0x00000010;
-
-    [DllImport("user32.dll", SetLastError = true)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static extern bool SetProcessDpiAwarenessContext(IntPtr dpiContext);
-
-    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-    private static extern int MessageBox(IntPtr hwnd, string text, string caption, uint type);
 }
